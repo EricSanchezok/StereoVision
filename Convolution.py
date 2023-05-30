@@ -23,7 +23,7 @@ class vector:
         return int(math.sqrt(self.x**2 + self.y**2))
 
 
-def convolution(image_conv, start, size, step, max_pixels, debug=False, imgOriginal=None):
+def convolution(image_conv, start, size, step, max_pixels, debug=False):
     """
     卷积函数，用于提取目标点集
 

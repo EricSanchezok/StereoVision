@@ -88,7 +88,7 @@ def Centerline_Extraction(SEGimage) -> object:
     return skeleton, target
 
 
-def getTargetPoints(frameLeft, GP: P.GlobalPara, imgOriginal=None, debug=False):
+def getTargetPoints(frameLeft, GP: P.GlobalPara, debug=False):
     """
     获取目标点集
 
@@ -113,7 +113,7 @@ def getTargetPoints(frameLeft, GP: P.GlobalPara, imgOriginal=None, debug=False):
     start = np.argmin(TargetPoints[:, 0])
     start = TargetPoints[start]
 
-    covP = COV.convolution(SEGimage, start=start, size=[20, 20], step=10, max_pixels=30, debug=debug, imgOriginal=imgOriginal)
+    covP = COV.convolution(SEGimage, start=start, size=[20, 20], step=10, max_pixels=30, debug=debug)
 
     if debug:
         combinedOut = np.hstack([SEGimage, SKEimage])

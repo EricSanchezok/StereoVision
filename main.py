@@ -9,7 +9,7 @@ import Visualation
 GP = P.GlobalPara(ROILeftP1=[320, 100], ROILeftP2=[620, 500],
                   lower=np.array([0, 0, 180]), upper=np.array([120, 40, 255]))
 
-capLeft, capRight = cv2.VideoCapture(2, cv2.CAP_DSHOW), cv2.VideoCapture(1, cv2.CAP_DSHOW)
+capLeft, capRight = cv2.VideoCapture(1, cv2.CAP_DSHOW), cv2.VideoCapture(2, cv2.CAP_DSHOW)
 capLeft.set(3, 800), capLeft.set(4, 600), capRight.set(3, 800), capRight.set(4, 600)
 
 SGBM_parameters = P.StereoParamsInit(debug=False)
@@ -40,7 +40,7 @@ if __name__ == '__main__':
         time_disparity = time.time()
 
         # 获取目标区域的点集
-        target = FE.getTargetPoints(frameLeft, GP, imgOriginal=frameLeft, debug=debug)
+        target = FE.getTargetPoints(frameLeft, GP, debug=debug)
 
         time_target = time.time()
 

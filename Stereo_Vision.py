@@ -35,7 +35,6 @@ def imgsTodisparity(frameLeft, frameRight, SGBM_parameters: P.StereoParamsInit, 
     """
 
     imgL_rectified = cv2.remap(frameLeft, P.mapLx, P.mapLy, cv2.INTER_LINEAR)  # 左图像校正
-
     imgR_rectified = cv2.remap(frameRight, P.mapRx, P.mapRy, cv2.INTER_LINEAR)  # 右图像校正
 
     imgL_gray = cv2.cvtColor(imgL_rectified, cv2.COLOR_BGR2GRAY)  # 转换为灰度图像
